@@ -118,5 +118,5 @@ resource "azurerm_key_vault_access_policy" "storage-access" {
 resource "azurerm_storage_account_customer_managed_key" "keyvault-link" {
   storage_account_id = azurerm_storage_account.sa1.id
   key_vault_id       = azurerm_key_vault.kv1.id
-  key_name           = azurerm_key_vault_key.statefile-keyvault-key.name
+  key_name           = azurerm_key_vault_key.statefile-keyvault-key1.name
 }
