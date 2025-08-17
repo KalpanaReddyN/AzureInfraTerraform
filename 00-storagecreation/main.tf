@@ -56,7 +56,9 @@ resource "azurerm_key_vault" "kv1" {
       "Backup",
       "Restore",
       "Recover",
-      "Purge"
+      "Purge",
+      "SetRotationPolicy", 
+      "GetRotationPolicy" 
     ]
 
     # these are used for fetching the token/passwords. here for statefile no need these.
