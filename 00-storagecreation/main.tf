@@ -107,8 +107,8 @@ resource "azurerm_key_vault_access_policy" "storage-access" {
 
   key_permissions = [
     "Get",
-    "wrapKey",
-    "unwrapKey"
+    "WrapKey",
+    "UnwrapKey"
   ]
 }
 
