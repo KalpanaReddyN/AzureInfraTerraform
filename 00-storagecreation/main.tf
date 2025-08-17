@@ -47,16 +47,16 @@ resource "azurerm_key_vault" "kv1" {
     object_id = data.azurerm_client_config.current.object_id
 
     key_permissions = [
-      "get",
-      "list",
-      "create",
-      "delete",
-      "update",
-      "import",
-      "backup",
-      "restore",
-      "recover",
-      "purge"
+      "Get",
+      "List",
+      "Create",
+      "Delete",
+      "Update",
+      "Import",
+      "Backup",
+      "Restore",
+      "Recover",
+      "Purge"
     ]
 
     # these are used for fetching the token/passwords. here for statefile no need these.
