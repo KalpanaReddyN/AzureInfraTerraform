@@ -103,7 +103,7 @@ resource "azurerm_key_vault_key" "statefile-keyvault-key" {
 resource "azurerm_key_vault_access_policy" "storage-access" {
   key_vault_id = azurerm_key_vault.kv1.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = azurerm_storage_account.sa1.identity.principal_id
+  object_id    = azurerm_storage_account.sa1.identity[0].principal_id
 
   key_permissions = [
     "Get",
