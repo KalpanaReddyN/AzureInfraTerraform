@@ -72,7 +72,7 @@ resource "azurerm_key_vault" "kv1" {
   }
 }
 # 2. Create the Key
-resource "azurerm_key_vault_key" "statefile-keyvault-key" {
+resource "azurerm_key_vault_key" "statefile-keyvault-key1" {
   name         = "generatedtfstatekey"
   key_vault_id = azurerm_key_vault.kv1.id
   key_type     = "RSA"
