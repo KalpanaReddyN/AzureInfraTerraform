@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "rg1" {
 
 # create storage account
 resource "azurerm_storage_account" "sa1" {
-  name                     = "statefile-storageaccount"
+  name                     = "statefile-storage-acc"
   resource_group_name      = azurerm_resource_group.rg1.name
   location                 = azurerm_resource_group.rg1.location
   account_tier             = "Standard"
@@ -19,7 +19,7 @@ resource "azurerm_storage_account" "sa1" {
 
 # create blob/container in storage account
 resource "azurerm_storage_container" "sc1" {
-  name                  = "statefile-storagecontainer"
+  name                  = "statefile-storage-blob"
   storage_account_id    = azurerm_storage_account.sa1.id
   container_access_type = "private"
 }
