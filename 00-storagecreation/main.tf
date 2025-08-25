@@ -16,6 +16,10 @@ resource "azurerm_storage_account" "sa1" {
     type = "SystemAssigned"
   }
 
+  blob_properties {
+    versioning_enabled = true
+  }
+
   tags = {
     environment = "development"
   }
@@ -121,13 +125,6 @@ resource "azurerm_storage_account_customer_managed_key" "keyvault-link" {
   storage_account_id = azurerm_storage_account.sa1.id
   key_vault_id       = azurerm_key_vault.kv1.id
   key_name           = azurerm_key_vault_key.statefile-keyvault-key.name
-}
-
-# Versioning
-resource "azurerm_storage_account_blob_properties" "versioning" {
-  storage_account_id = azurerm_storage_account.sa1.id
-
-  versioning_enabled = true
 }
 
 # Lifecycle Management (e.g., delete old versions after 90 days)
